@@ -12,7 +12,7 @@ def cleanCache(path=False):
         path = sys.path[0]
     for cp, dns, fns in os.walk(path):
         for n in fns+dns:
-            if n[0:2] == "._" or n in ["Thumbs.db", ".DS_Store", "__MACOSX"]:
+            if n[0:2] == "._" or n in ["Thumbs.db", ".DS_Store", "__MACOSX", "desktop.ini"]:
                 try:
                     try:
                         shutil.rmtree(cp+"/"+n)
